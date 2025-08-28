@@ -14,3 +14,9 @@ argocd cluster list
 
 #argocd list projects
 argocd proj list
+
+#add cluster to argocd:
+kubectl config set-cluster prod --server [] --certificate-authority [] #set cluster
+kubectl config set-credentials admin --client-certificate=[] --client-key=[] #set user
+kubectl config set-context admin-prod --cluster=[] --user= --namespace=[] # set context
+argocd cluster add CLUSTERNAME
